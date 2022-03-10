@@ -159,8 +159,7 @@
       "type": "string",
       "metadata": {
         "description": "Username of the administrator account of VM-Series"
-      },
-      "defaultValue": "adminpa"
+      }
     },
     "adminPassword": {
       "type": "securestring",
