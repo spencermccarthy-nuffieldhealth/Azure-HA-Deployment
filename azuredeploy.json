@@ -35,7 +35,7 @@
        "metadata": {
           "description": "Name of VM-Series VM in the Azure portal"
        },
-       "defaultValue": "VM-Series"
+       "defaultValue": "AUK(Name)"
     },
     "imageVersion": {
       "type": "string",
@@ -79,7 +79,7 @@
       "metadata": {
         "description": "Name of the Virtual Network (VNET)"
       },
-      "defaultValue": "fwVNET"
+      "defaultValue": "VNET Name"
     },
     "vnetNewOrExisting": {
             "type": "string",
@@ -160,6 +160,7 @@
       "metadata": {
         "description": "Username of the administrator account of VM-Series"
       }
+      "defaultValue": "adminpa"
     },
     "adminPassword": {
       "type": "securestring",
@@ -201,7 +202,7 @@
     },
     "publicIPAllocationMethod": {
       "type": "string",
-      "defaultValue": "Dynamic",
+      "defaultValue": "Static",
       "allowedValues": [
         "Dynamic",
         "Static"
@@ -245,7 +246,7 @@
     "imagePublisher": "paloaltonetworks",
     "imageSku" : "byol",
     "imageOffer" : "vmseries1",
-    "nicName": "[concat(parameters('vmName'), '-', parameters('publicIPAddressName'), '-eth')]",
+    "nicName": "[concat(parameters('vmName'), '-eth')]",
     "existingVnetID": "[resourceId(parameters('virtualNetworkExistingRGName'),concat('Microsoft.Network','/','virtualNetworks'),parameters('virtualNetworkName'))]",
     "existingSubnet0Ref": "[concat(variables('existingVnetID'),'/subnets/',parameters('subnet0Name'))]",
     "existingSubnet1Ref": "[concat(variables('existingVnetID'),'/subnets/',parameters('subnet1Name'))]",
